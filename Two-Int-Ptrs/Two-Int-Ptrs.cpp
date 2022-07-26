@@ -5,7 +5,29 @@
 #include <iostream>
 using namespace std;
 
+void displayPtrs(int a, int b);
+
 int main()
 {
-    cout << "Hello World!\n";
+	int a;
+	int b;
+
+	cout << "Please enter two whole number, interger values:" << endl;
+	cin >> a;
+	cin >> b;
+
+	displayPtrs(a, b);
+}
+
+void displayPtrs(int a, int b)
+{
+	int* ptrA = new int{ a };
+	int* ptrB = new int{ b };
+
+	cout << "You entered: " << *ptrA << " and " << *ptrB << "." << endl;
+
+	delete ptrA;
+	ptrA = nullptr;
+	delete ptrB;
+	ptrB = nullptr;
 }
